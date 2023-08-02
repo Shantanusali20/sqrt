@@ -1,0 +1,80 @@
+<html>
+
+
+
+<head>
+	<title> SQRT Finder by SS </title>
+
+	<style>
+		input, button {border : 1px solid #ccc; background-color : #fff; cursor : pointer;}
+		body { background-color : #f5f5f5 ; font-size : 16px ; font-family : sans-serif ;}
+		h1 { background-color : blue ;  width : 50% ;font-size : 24px ; border-radius : 45px ; color : #333;}
+		button{ color : #fff ; background-color : #333; }
+
+	</style>
+
+	<script>
+
+		function find()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+
+			/*if( num.value == "")
+			{
+				alert("Please Enter A Number!");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}*/
+
+
+			let n = parseFloat(num.value);
+
+
+			if( num.value < 0.0)
+			{
+				alert("Only Positive Numbers Allowed!");
+				ans.innerHTML = "";
+				num.focus();
+				num.value = "";
+				return;
+			}
+
+
+			let r = Math.sqrt(n);
+			let msg = "sqrt" + " " + r.toFixed(2);
+			ans.innerHTML = msg;
+
+		}
+	
+	</script>
+
+
+
+</head>
+<body>
+	<center>
+		<h1 > Sqrt Finder </h1>
+
+		<form onsubmit = "find()">
+			<input type = "number" step = "any"placeholder = "Enter a Number" id="num" required/>
+			<br>
+			<br>
+			<input type = "submit"  value = "Find Sqrt" />
+		</form>
+			<br>
+			<h2 id = "ans"/>
+	</center>
+
+
+
+
+</body>
+
+
+
+
+
+</html>
